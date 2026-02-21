@@ -1,4 +1,4 @@
-# mutt-wizard
+# My fork of [muttwizard](https://github.com/lukesmithxyz/mutt-wizard) 
 
 https://muttwizard.com/
 
