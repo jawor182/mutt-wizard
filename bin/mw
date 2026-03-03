@@ -69,8 +69,8 @@ getaccounts() { accounts="$(find -L "$accdir" -type f 2>/dev/null | grep -o "\S*
 list() { getaccounts && [ -n "$accounts" ] && echo "$accounts" || exit 1; }
 
 prepmsmtp() {
-	mkdir -p "${msmtprc%/*}" "${msmtplog%/*}"
-	ln -s "$msmtprc" "$HOME/.msmtprc" 2>/dev/null
+	mkdir -p "${msmtprc%/*}" "${msmtplog%/*}" "$XDG_CONFIG_HOME/msmtp"
+	ln -s "$msmtprc" "$XDG_CONFIG_HOME/msmtp/config" 2>/dev/null
 	envsubst <"$msmtptemp" >>"$msmtprc"
 }
 
